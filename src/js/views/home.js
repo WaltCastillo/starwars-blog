@@ -16,6 +16,15 @@ export const Home = () => {
 							image={
 								"https://www.nme.com/wp-content/uploads/2021/01/markhamill-lukeskywalker-2000x1270-1.jpg"
 							}
+							description={""}
+						/>
+						<Card
+							id={"2"}
+							object={"people"}
+							image={
+								"https://www.nme.com/wp-content/uploads/2021/01/markhamill-lukeskywalker-2000x1270-1.jpg"
+							}
+							description={""}
 						/>
 					</div>
 				</div>

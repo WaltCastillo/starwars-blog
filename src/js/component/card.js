@@ -1,30 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 export const Card = props => {
+	const [dataApi, setdataApi] = useState();
+
 	let url = "https://www.swapi.tech/api/" + props.object + "/" + props.id;
 	console.log("url: ", url);
 
 	useEffect(() => {
+		loadData();
+	}, []);
+
+	const loadData = async () => {
 		fetch(url)
-			.then(r => {
-				return r.json();
+			.then(res => {
+				return res.json();
 			})
-			.then(e => {
-				console.log("e: ", e);
+			.then(data => {
+				console.log("data: ", data);
+				setdataApi(data.result);
 			});
-	});
+	};
 
 	return (
 		<div className="card" style={{ width: "250px", heigt: "400px" }}>
 			<img className="card-img-top" src={props.image} alt="Card image cap" />
 			<div className="card-body">
-				<h5 className="card-title">hola</h5>
-				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</p>
+				<h5 className="card-title">{dataApi.name}</h5>
+				<p className="card-text">description</p>
 				<a href="#" className="btn btn-primary">
-					Go somewhere
+					Learn more
 				</a>
 			</div>
 		</div>
