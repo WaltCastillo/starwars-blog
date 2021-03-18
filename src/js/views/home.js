@@ -19,12 +19,10 @@ export const Home = () => {
 					{store.personajes.map((item, index) => {
 						<div className="card">
 							<Card
-								id={item}
-								object={"people"}
+								id={index}
 								image={
 									"https://www.nme.com/wp-content/uploads/2021/01/markhamill-lukeskywalker-2000x1270-1.jpg"
 								}
-								description={""}
 							/>
 						</div>;
 					})}
